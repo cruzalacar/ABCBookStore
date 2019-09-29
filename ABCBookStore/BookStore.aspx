@@ -108,7 +108,7 @@
                 <%-- Buttons --%>
                 <tr>
                     <td><asp:Button ID="Button1" runat="server" Text="Save Book" OnClick="Button1_Click" /></td>
-                    <td><asp:Button ID="Button2" runat="server" Text="View List" /></td>
+                    <td><asp:Button ID="Button2" runat="server" Text="View List" OnClick="Button2_Click" /></td>
                 </tr>
             </table>
 
