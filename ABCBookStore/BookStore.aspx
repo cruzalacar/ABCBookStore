@@ -107,7 +107,7 @@
                     
                 <%-- Buttons --%>
                 <tr>
-                    <td><asp:Button ID="Button1" runat="server" Text="Save Book" /></td>
+                    <td><asp:Button ID="Button1" runat="server" Text="Save Book" OnClick="Button1_Click" /></td>
                     <td><asp:Button ID="Button2" runat="server" Text="View List" /></td>
                 </tr>
             </table>
@@ -132,7 +132,7 @@
             <br />
 
             <%-- Table Database --%>
-            <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:ConnectionString %>" DeleteCommand="DELETE FROM [BookInfo] WHERE [Id] = @Id" InsertCommand="INSERT INTO [BookInfo] ([Id], [Title], [Author], [ISBN], [Publish Date], [Publisher], [Category], [Pages], [Price]) VALUES (@Id, @Title, @Author, @ISBN, @Publish_Date, @Publisher, @Category, @Pages, @Price)" SelectCommand="SELECT * FROM [BookInfo]" UpdateCommand="UPDATE [BookInfo] SET [Title] = @Title, [Author] = @Author, [ISBN] = @ISBN, [Publish Date] = @Publish_Date, [Publisher] = @Publisher, [Category] = @Category, [Pages] = @Pages, [Price] = @Price WHERE [Id] = @Id">
+            <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:ConnectionString %>" DeleteCommand="DELETE FROM [BookInfo] WHERE [Id] = @Id" InsertCommand="INSERT INTO [BookInfo] ([Id], [Title], [Author], [ISBN], [PublishDate], [Publisher], [Category], [Pages], [Price]) VALUES (@Id, @Title, @Author, @ISBN, @PublishDate, @Publisher, @Category, @Pages, @Price)" SelectCommand="SELECT * FROM [BookInfo]" UpdateCommand="UPDATE [BookInfo] SET [Title] = @Title, [Author] = @Author, [ISBN] = @ISBN, [PublishDate] = @PublishDate, [Publisher] = @Publisher, [Category] = @Category, [Pages] = @Pages, [Price] = @Price WHERE [Id] = @Id">
                 <DeleteParameters>
                     <asp:Parameter Name="Id" Type="Int32" />
                 </DeleteParameters>
@@ -141,7 +141,7 @@
                     <asp:Parameter Name="Title" Type="String" />
                     <asp:Parameter Name="Author" Type="String" />
                     <asp:Parameter Name="ISBN" Type="Int32" />
-                    <asp:Parameter Name="Publish_Date" Type="String" />
+                    <asp:Parameter Name="PublishDate" Type="String" />
                     <asp:Parameter Name="Publisher" Type="String" />
                     <asp:Parameter Name="Category" Type="String" />
                     <asp:Parameter Name="Pages" Type="Int32" />
@@ -151,7 +151,7 @@
                     <asp:Parameter Name="Title" Type="String" />
                     <asp:Parameter Name="Author" Type="String" />
                     <asp:Parameter Name="ISBN" Type="Int32" />
-                    <asp:Parameter Name="Publish_Date" Type="String" />
+                    <asp:Parameter Name="PublishDate" Type="String" />
                     <asp:Parameter Name="Publisher" Type="String" />
                     <asp:Parameter Name="Category" Type="String" />
                     <asp:Parameter Name="Pages" Type="Int32" />
@@ -167,7 +167,7 @@
                     <asp:BoundField DataField="Title" HeaderText="Title" SortExpression="Title" />
                     <asp:BoundField DataField="Author" HeaderText="Author" SortExpression="Author" />
                     <asp:BoundField DataField="ISBN" HeaderText="ISBN" SortExpression="ISBN" />
-                    <asp:BoundField DataField="Publish Date" HeaderText="Publish Date" SortExpression="Publish Date" />
+                    <asp:BoundField DataField="PublishDate" HeaderText="PublishDate" SortExpression="PublishDate" />
                     <asp:BoundField DataField="Publisher" HeaderText="Publisher" SortExpression="Publisher" />
                     <asp:BoundField DataField="Category" HeaderText="Category" SortExpression="Category" />
                     <asp:BoundField DataField="Pages" HeaderText="Pages" SortExpression="Pages" />
