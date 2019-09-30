@@ -65,7 +65,7 @@
                 <tr>
                     <td class="auto-style3">   
                         <asp:DropDownList ID="ddPublisher" runat="server" Width="250px">
-                        <asp:ListItem>Selecte a Publisher...</asp:ListItem>
+                        <asp:ListItem>Select a Publisher...</asp:ListItem>
                         <asp:ListItem>Canadian</asp:ListItem>
                         <asp:ListItem>American</asp:ListItem>
                     </asp:DropDownList></td>
@@ -147,29 +147,29 @@
             <%-- Table Database --%>
             <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:ConnectionString %>" DeleteCommand="DELETE FROM [BookInfo] WHERE [Id] = @Id" InsertCommand="INSERT INTO [BookInfo] ([Id], [Title], [Author], [ISBN], [PublishDate], [Publisher], [Category], [Pages], [Price]) VALUES (@Id, @Title, @Author, @ISBN, @PublishDate, @Publisher, @Category, @Pages, @Price)" SelectCommand="SELECT * FROM [BookInfo]" UpdateCommand="UPDATE [BookInfo] SET [Title] = @Title, [Author] = @Author, [ISBN] = @ISBN, [PublishDate] = @PublishDate, [Publisher] = @Publisher, [Category] = @Category, [Pages] = @Pages, [Price] = @Price WHERE [Id] = @Id">
                 <DeleteParameters>
-                    <asp:Parameter Name="Id" Type="Int32" />
+                    <asp:Parameter Name="Id" Type="Int64" />
                 </DeleteParameters>
                 <InsertParameters>
-                    <asp:Parameter Name="Id" Type="Int32" />
+                    <asp:Parameter Name="Id" Type="Int64" />
                     <asp:Parameter Name="Title" Type="String" />
                     <asp:Parameter Name="Author" Type="String" />
-                    <asp:Parameter Name="ISBN" Type="Int32" />
+                    <asp:Parameter Name="ISBN" Type="Int64" />
                     <asp:Parameter Name="PublishDate" Type="String" />
                     <asp:Parameter Name="Publisher" Type="String" />
                     <asp:Parameter Name="Category" Type="String" />
-                    <asp:Parameter Name="Pages" Type="Int32" />
+                    <asp:Parameter Name="Pages" Type="Int64" />
                     <asp:Parameter Name="Price" Type="String" />
                 </InsertParameters>
                 <UpdateParameters>
                     <asp:Parameter Name="Title" Type="String" />
                     <asp:Parameter Name="Author" Type="String" />
-                    <asp:Parameter Name="ISBN" Type="Int32" />
+                    <asp:Parameter Name="ISBN" Type="Int64" />
                     <asp:Parameter Name="PublishDate" Type="String" />
                     <asp:Parameter Name="Publisher" Type="String" />
                     <asp:Parameter Name="Category" Type="String" />
-                    <asp:Parameter Name="Pages" Type="Int32" />
+                    <asp:Parameter Name="Pages" Type="Int64" />
                     <asp:Parameter Name="Price" Type="String" />
-                    <asp:Parameter Name="Id" Type="Int32" />
+                    <asp:Parameter Name="Id" Type="Int64" />
                 </UpdateParameters>
             </asp:SqlDataSource>
             <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False" CellPadding="4" DataKeyNames="Id" DataSourceID="SqlDataSource1" ForeColor="#333333" GridLines="None">
