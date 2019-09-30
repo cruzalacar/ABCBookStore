@@ -96,6 +96,8 @@ namespace ABCBookStore
 
                if (ddSearch.Text == "Price")
                 {
+                    cmd.CommandText = "filterPrice";
+
                     if (txtSearch.Text != "")
                     {
                         SqlParameter param = new SqlParameter("@Price", txtSearch.Text);
