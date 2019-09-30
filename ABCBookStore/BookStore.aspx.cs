@@ -6,6 +6,7 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 using System.Data.SqlClient;
 using System.Data;
+using System.Configuration;
 
 namespace ABCBookStore
 {
@@ -48,6 +49,7 @@ namespace ABCBookStore
                 {
                     //update table
                     GridView1.DataBind();
+                    
                 }
                 else
                 {
@@ -65,6 +67,7 @@ namespace ABCBookStore
             SqlConnection conn = new SqlConnection(conString);
             conn.Open();
 
+            GridView1.DataSource = SqlDataSource1;
             GridView1.DataBind();
 
             conn.Close();
@@ -81,6 +84,71 @@ namespace ABCBookStore
             ddCategory.Text = string.Empty;
             txtPages.Text = string.Empty;
             txtPrice.Text = string.Empty;
+        }
+
+        protected void btnSearch_Click(object sender, EventArgs e)
+        {
+            //search 
+            SqlConnection conn = new SqlConnection(conString);
+            conn.Open();
+
+            using (SqlCommand cmd = new SqlCommand())
+            {
+                cmd.Connection = conn;
+                cmd.CommandText = "searchLibrary";
+                cmd.CommandType = CommandType.StoredProcedure;
+
+                if (ddSearch.Text == "Title")
+                {
+                    if (txtSearch.Text != "")
+                    {
+                        SqlParameter param = new SqlParameter("@Title", txtSearch.Text);
+                        cmd.Parameters.Add(param);
+                    }
+                    else
+                    {
+
+                    }
+                    
+                }
+                else if (ddSearch.Text == "Price")
+                {
+                    if (txtSearch.Text != "")
+                    {
+                        SqlParameter param = new SqlParameter("@Price", txtSearch.Text);
+                        cmd.Parameters.Add(param);
+                    }
+                    else
+                    {
+
+                    }
+                }
+                else if (ddSearch.Text == "Category")
+                {
+                    if (txtSearch.Text != "")
+                    {
+                        SqlParameter param = new SqlParameter("@Category", txtSearch.Text);
+                        cmd.Parameters.Add(param);
+                    }
+                    else
+                    {
+
+                    }
+                }
+                else
+                {
+
+                }
+
+                
+                SqlDataReader rdr = cmd.ExecuteReader();
+                GridView1.DataSourceID = null;
+                GridView1.DataSource = rdr;
+                GridView1.DataBind();
+
+                
+            }
+            conn.Close();
         }
     }
 }
