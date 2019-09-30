@@ -70,5 +70,17 @@ namespace ABCBookStore
             conn.Close();
         }
 
+        protected void ButtonClear_Click(object sender, EventArgs e)
+        {
+            //empty fields
+            txtTitle.Text = string.Empty;
+            txtAuthor.Text = string.Empty;
+            txtISBN.Text = string.Empty;
+            txtPublishDate.Text = string.Empty;
+            ddPublisher.Text = string.Empty;
+            ddCategory.Text = string.Empty;
+            txtPages.Text = string.Empty;
+            txtPrice.Text = string.Empty;
+        }
     }
 }

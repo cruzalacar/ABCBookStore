@@ -5,6 +5,14 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
     <title></title>
+    <style type="text/css">
+        .auto-style1 {
+            width: 121px;
+        }
+        .auto-style2 {
+            width: 130px;
+        }
+    </style>
 </head>
 <body>
     <form id="form1" runat="server">
@@ -107,8 +115,9 @@
                     
                 <%-- Buttons --%>
                 <tr>
-                    <td><asp:Button ID="Button1" runat="server" Text="Save Book" OnClick="Button1_Click" /></td>
-                    <td><asp:Button ID="Button2" runat="server" Text="View List" OnClick="Button2_Click" /></td>
+                    <td><asp:Button ID="Button1" runat="server" Text="Save Book" OnClick="Button1_Click" Width="150px" /></td>
+                    <td><asp:Button ID="Button2" runat="server" Text="View List" OnClick="Button2_Click" Width="150px"/></td>
+                    <td><asp:Button ID="ButtonClear" runat="server" Text="Clear" OnClick="ButtonClear_Click" Width="150px"/></td>
                 </tr>
             </table>
 
@@ -120,7 +129,7 @@
                     <td><asp:Label ID="Label9" runat="server" Text="Search:"></asp:Label></td>
                     <td><asp:TextBox ID="txtSearch" runat="server"></asp:TextBox></td> 
                     <td>
-                        <asp:DropDownList ID="DropDownList1" runat="server">
+                        <asp:DropDownList ID="ddSearch" runat="server">
                         <asp:ListItem>Title</asp:ListItem>
                         <asp:ListItem>Price</asp:ListItem>
                         <asp:ListItem>Category</asp:ListItem>
