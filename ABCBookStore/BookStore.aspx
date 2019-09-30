@@ -15,6 +15,10 @@
         .auto-style4 {
             width: 454px;
         }
+        .auto-style5 {
+            width: 281px;
+            height: 40px;
+        }
     </style>
 </head>
 <body>
@@ -26,6 +30,7 @@
             <br />
 
             <table>
+                <%-- Project Info --%>
                 <tr>
                     <td class="auto-style4"><asp:Label ID="Label10" runat="server" Text="Assignment 1"></asp:Label></td>
                 </tr>
@@ -43,19 +48,18 @@
                 </tr>
             </table>
 
-            <br\ />
-            <br\ />
+            &nbsp;
 
             <table>
 
 
                 <%-- Book Title --%>
                 <tr>
-                    <td class="auto-style3"><asp:Label ID="Label1" runat="server" Text="Book Title:"></asp:Label></td>
+                    <td class="auto-style5"><asp:Label ID="Label1" runat="server" Text="Book Title:"></asp:Label></td>
                 </tr>
                 <tr>
                     <td class="auto-style3"><asp:TextBox ID="txtTitle" runat="server" Width="250px"></asp:TextBox></td>
-                    <%--<td class="auto-style2"><asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ControlToValidate="txtTitle" ErrorMessage="Book Title Required"></asp:RequiredFieldValidator></td>--%>
+                    <td class="auto-style2"><asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ControlToValidate="txtTitle" ErrorMessage="Book Title Required"></asp:RequiredFieldValidator></td>
                 </tr>
                 
                 <%-- Author --%>
@@ -64,7 +68,7 @@
                 </tr>
                 <tr>
                     <td class="auto-style3"><asp:TextBox ID="txtAuthor" runat="server" Width="250px"></asp:TextBox></td>
-                    <%--<td class="auto-style2"><asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server" ControlToValidate="txtAuthor" ErrorMessage="Author(s) Required"></asp:RequiredFieldValidator></td>--%>
+                    <td class="auto-style2"><asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server" ControlToValidate="txtAuthor" ErrorMessage="Author(s) Required"></asp:RequiredFieldValidator></td>
                 </tr>
 
                 <%-- ISNB --%>
@@ -73,7 +77,7 @@
                 </tr>
                 <tr>
                     <td class="auto-style3"><asp:TextBox ID="txtISBN" runat="server" Width="250px"></asp:TextBox></td>
-                    <%--<td class="auto-style2"><asp:RequiredFieldValidator ID="RequiredFieldValidator3" runat="server" ControlToValidate="txtISBN" ErrorMessage="ISBN Required"></asp:RequiredFieldValidator></td>--%>
+                    <td class="auto-style2"><asp:RequiredFieldValidator ID="RequiredFieldValidator3" runat="server" ControlToValidate="txtISBN" ErrorMessage="ISBN Required"></asp:RequiredFieldValidator></td>
                 </tr>
 
                 <%-- Publishing Date --%>
@@ -82,7 +86,7 @@
                 </tr>
                 <tr>
                     <td class="auto-style3"><asp:TextBox ID="txtPublishDate" runat="server" TextMode="Date" Width="250px"></asp:TextBox></td> 
-                    <%--<td class="auto-style2"><asp:RequiredFieldValidator ID="RequiredFieldValidator9" runat="server" ControlToValidate="txtPublishDate" ErrorMessage="Publishing Date Required"></asp:RequiredFieldValidator></td>--%>
+                    <td class="auto-style2"><asp:RequiredFieldValidator ID="RequiredFieldValidator9" runat="server" ControlToValidate="txtPublishDate" ErrorMessage="Publishing Date Required"></asp:RequiredFieldValidator></td>
                 </tr>
 
                 <%-- Publisher --%>
@@ -96,7 +100,7 @@
                         <asp:ListItem>Canadian</asp:ListItem>
                         <asp:ListItem>American</asp:ListItem>
                     </asp:DropDownList></td>
-                    <%--<td class="auto-style2"><asp:RequiredFieldValidator ID="RequiredFieldValidator12" runat="server" ControlToValidate="ddPublisher" ErrorMessage="Publisher Required"></asp:RequiredFieldValidator></td>--%>
+                    <td class="auto-style2"><asp:RequiredFieldValidator ID="RequiredFieldValidator12" runat="server" ControlToValidate="ddPublisher" ErrorMessage="Publisher Required"></asp:RequiredFieldValidator></td>
                 </tr>
 
                 <%-- Category --%>
@@ -117,7 +121,7 @@
                         <asp:ListItem>Sci-fi</asp:ListItem>
                         </asp:DropDownList>
                     </td>
-                    <%--<td class="auto-style2"><asp:RequiredFieldValidator ID="RequiredFieldValidator13" runat="server" ControlToValidate="ddCategory" ErrorMessage="Category Required"></asp:RequiredFieldValidator></td>--%>
+                    <td class="auto-style2"><asp:RequiredFieldValidator ID="RequiredFieldValidator13" runat="server" ControlToValidate="ddCategory" ErrorMessage="Category Required"></asp:RequiredFieldValidator></td>
                 </tr>
 
 
@@ -127,7 +131,7 @@
                 </tr>
                 <tr>
                     <td class="auto-style3"><asp:TextBox ID="txtPages" runat="server" Width="250px"></asp:TextBox></td> 
-                    <%--<td class="auto-style2"><asp:RequiredFieldValidator ID="RequiredFieldValidator10" runat="server" ControlToValidate="txtPages" ErrorMessage="Number of Pages Required"></asp:RequiredFieldValidator></td>--%>
+                    <td class="auto-style2"><asp:RequiredFieldValidator ID="RequiredFieldValidator10" runat="server" ControlToValidate="txtPages" ErrorMessage="Number of Pages Required"></asp:RequiredFieldValidator></td>
                 </tr>
 
 
@@ -137,7 +141,7 @@
                 </tr>
                 <tr>
                     <td class="auto-style3"><asp:TextBox ID="txtPrice" runat="server" Width="250px"></asp:TextBox></td> 
-                    <%--<td class="auto-style2"><asp:RequiredFieldValidator ID="RequiredFieldValidator11" runat="server" ControlToValidate="txtPrice" ErrorMessage="Price Required"></asp:RequiredFieldValidator></td>--%>
+                    <td class="auto-style2"><asp:RequiredFieldValidator ID="RequiredFieldValidator11" runat="server" ControlToValidate="txtPrice" ErrorMessage="Price Required"></asp:RequiredFieldValidator></td>
                 </tr>
             </table>
 
