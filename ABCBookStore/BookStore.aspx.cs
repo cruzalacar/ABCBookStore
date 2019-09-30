@@ -48,13 +48,11 @@ namespace ABCBookStore
                 if (numBookAdded == 1)
                 {
                     //update table
-                    GridView1.DataBind();
-                    
+                    GridView1.DataBind();   
                 }
                 else
                 {
                     //Error notification
-
                 }
             }
             conn.Close();
@@ -64,26 +62,14 @@ namespace ABCBookStore
         protected void Button2_Click(object sender, EventArgs e)
         {
             //Refresh Table
-            SqlConnection conn = new SqlConnection(conString);
-            conn.Open();
-
+            GridView1.DataSourceID = null;
             GridView1.DataSource = SqlDataSource1;
             GridView1.DataBind();
-
-            conn.Close();
         }
 
         protected void ButtonClear_Click(object sender, EventArgs e)
         {
             //empty fields
-            //txtTitle.Text = string.Empty;
-            //txtAuthor.Text = string.Empty;
-            //txtISBN.Text = string.Empty;
-            //txtPublishDate.Text = string.Empty;
-            //ddPublisher.Text = string.Empty;
-            //ddCategory.Text = string.Empty;
-            //txtPages.Text = string.Empty;
-            //txtPrice.Text = string.Empty;
             Response.Redirect(Request.Url.AbsoluteUri);
         }
 
@@ -105,13 +91,9 @@ namespace ABCBookStore
                     {
                         SqlParameter param = new SqlParameter("@Title", txtSearch.Text);
                         cmd.Parameters.Add(param);
-                    }
-                    //else
-                    //{
-
-                    //}
-                    
+                    }          
                 }
+
                if (ddSearch.Text == "Price")
                 {
                     if (txtSearch.Text != "")
@@ -119,10 +101,6 @@ namespace ABCBookStore
                         SqlParameter param = new SqlParameter("@Price", txtSearch.Text);
                         cmd.Parameters.Add(param);
                     }
-                    //else
-                    //{
-
-                    //}
                 }
                 if (ddSearch.Text == "Category")
                 {
@@ -131,30 +109,19 @@ namespace ABCBookStore
                         SqlParameter param = new SqlParameter("@Category", txtSearch.Text);
                         cmd.Parameters.Add(param);
                     }
-                    //else
-                    //{
-
-                    //}
                 }
-                //else
-                //{
 
-                //}
-
-                
                 SqlDataReader rdr = cmd.ExecuteReader();
-                //GridView1.DataSourceID = null;
+                GridView1.DataSourceID = null;
                 GridView1.DataSource = rdr;
-                GridView1.DataBind();
-
-                
+                GridView1.DataBind();      
             }
             conn.Close();
         }
 
-        protected void GridView1_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            GridView1.EditIndex = 1;
-        }
+        //protected void GridView1_SelectedIndexChanged(object sender, EventArgs e)
+        //{
+        //    GridView1.EditIndex = 1;
+        //}
     }
 }
