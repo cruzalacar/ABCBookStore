@@ -12,6 +12,9 @@
         .auto-style3 {
             width: 281px;
         }
+        .auto-style4 {
+            width: 454px;
+        }
     </style>
 </head>
 <body>
@@ -21,7 +24,31 @@
             &nbsp;&nbsp;
                     <br />
             <br />
+
             <table>
+                <tr>
+                    <td class="auto-style4"><asp:Label ID="Label10" runat="server" Text="Assignment 1"></asp:Label></td>
+                </tr>
+                <tr>
+                    <td class="auto-style4"><asp:Label ID="Label11" runat="server" Text="Member 1: Arceline Cruz"></asp:Label></td>
+                </tr>
+                <tr>
+                    <td class="auto-style4"><asp:Label ID="Label12" runat="server" Text="Member 2: Marco Hidalgo Romero"></asp:Label></td>
+                </tr>
+                <tr>
+                    <td class="auto-style4"><asp:Label ID="Label13" runat="server" Text="Section: 1199_91490"></asp:Label></td>
+                </tr>
+                <tr>
+                    <td class="auto-style4"><asp:Label ID="Label14" runat="server" Text="Instructor: Syed Tanbeer"></asp:Label></td>
+                </tr>
+            </table>
+
+            <br\ />
+            <br\ />
+
+            <table>
+
+
                 <%-- Book Title --%>
                 <tr>
                     <td class="auto-style3"><asp:Label ID="Label1" runat="server" Text="Book Title:"></asp:Label></td>
